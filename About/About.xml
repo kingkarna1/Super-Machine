@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>KingkarnaRWSuperMachine</name>
+  <author>Kingkarna</author>
+  <packageId>KingkarnaRWSuperMachine.1</packageId>
+  <url>WIP</url>
+  <supportedVersions>
+    <li>1.4</li>
+  </supportedVersions>
+  <description>A machine that gives you both food and sleep, but has massive power usage! </description>
+</ModMetaData>
