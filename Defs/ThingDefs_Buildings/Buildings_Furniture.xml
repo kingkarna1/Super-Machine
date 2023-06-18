@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef Name="Super Machine">
+    <defName>SuperMachine</defName>
+    <label>Super Machine</label>
+    <description>Designates a machine where people get both sleep and food needs met.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bed/SleepSpot</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,2)</drawSize>
+    </graphicData>
+    <size>(1,2)</size>
+    <designationHotKey>Misc1</designationHotKey>
+    <category>Building</category>
+    <designationCategory>Furniture</designationCategory>
+    <thingClass>Building_bed</thingClass>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <selectable>true</selectable>
+    <drawerType>MapMeshOnly</drawerType>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <repairEffect>Repair</repairEffect>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <statBases>
+      <Nutrition>1</Nutrition>
+      <transmitsPower>true</transmitsPower>
+      <glowRadius>3</glowRadius>
+      <glowColor>(217,112,33,0)</glowColor>
+      <Mass>300</Mass>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0.4</Flammability>
+      <SellPriceFactor>1.25</SellPriceFactor>
+      <WorkToBuild>0</WorkToBuild>
+      <Comfort>10</Comfort>
+      <SurgerySuccessChanceFactor>0.1</SurgerySuccessChanceFactor>
+      <BedRestEffectiveness>0.1</BedRestEffectiveness>
+      <MedicalTendQualityOffset>0.1</MedicalTendQualityOffset>
+    </statBases>
+    <comps>
+      <li>
+        <basePowerConsumption>10000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+    </comps>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <uiOrder>2000</uiOrder>
+    <passability>Standable</passability>
+    <drawGUIOverlay>True</drawGUIOverlay>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <building>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <canPlaceOverImpassablePlant>True</canPlaceOverImpassablePlant>
+      <ai_chillDestination>False</ai_chillDestination>
+      <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
+      <artificialForMeditationPurposes>True</artificialForMeditationPurposes>
+      <buildingTags>
+        <li>Bed</li>
+      </buildingTags>
+    </building>
+  </ThingDef>
+
+</Defs>
