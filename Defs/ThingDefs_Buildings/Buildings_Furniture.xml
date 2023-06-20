@@ -2,15 +2,27 @@
 <Defs>
   
   <ThingDef Name="Super Machine">
+    <modExtensions>
+      <li Class="tent.TentModExtension">
+        <negateSleptOutside>true</negateSleptOutside>
+        <negateWater>true</negateWater>
+        <negateSleptInBarracks>true</negateSleptInBarracks>
+      </li>
+    </modExtensions>
     <defName>SuperMachine</defName>
     <label>Super Machine</label>
     <description>Designates a machine where people get both sleep and food needs met.</description>
     <graphicData>
       <texPath>Things/Building/Furniture/Bed/SleepSpot</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(1,2)</drawSize>
+      <drawSize>(9,6)</drawSize>
     </graphicData>
-    <size>(1,2)</size>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <size>(4,4)</size>
     <designationHotKey>Misc1</designationHotKey>
     <category>Building</category>
     <designationCategory>Furniture</designationCategory>
@@ -24,25 +36,37 @@
     <filthLeaving>Filth_RubbleBuilding</filthLeaving>
     <altitudeLayer>FloorEmplacement</altitudeLayer>
     <statBases>
-      <Nutrition>1</Nutrition>
-      <transmitsPower>true</transmitsPower>
-      <glowRadius>3</glowRadius>
-      <glowColor>(217,112,33,0)</glowColor>
-      <Mass>300</Mass>
-      <MaxHitPoints>500</MaxHitPoints>
-      <Flammability>0.4</Flammability>
-      <SellPriceFactor>1.25</SellPriceFactor>
-      <WorkToBuild>0</WorkToBuild>
-      <Comfort>10</Comfort>
-      <SurgerySuccessChanceFactor>0.1</SurgerySuccessChanceFactor>
-      <BedRestEffectiveness>0.1</BedRestEffectiveness>
-      <MedicalTendQualityOffset>0.1</MedicalTendQualityOffset>
+      <Flammability>-1000</Flammability>
+      <MaxHitPoints>10000</MaxHitPoints>
+      <Beauty>10000</Beauty>
+      <WorkToBuild>1800</WorkToBuild>
+      <Mass>30</Mass>
+      <JoyGainFactor>1000</JoyGainFactor>
+      <BedRestEffectiveness>1000</BedRestEffectiveness>
+      <SurgerySuccessChanceFactor>1000</SurgerySuccessChanceFactor>
+      <Comfort>1000</Comfort>
+      <ImmunityGainSpeedFactor>1000</ImmunityGainSpeedFactor>
     </statBases>
     <comps>
-      <li>
-        <basePowerConsumption>10000</basePowerConsumption>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-1000000</basePowerConsumption>
         <transmitsPower>true</transmitsPower>
       </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>100</glowRadius>
+        <glowColor>(217,112,33,0)</glowColor>
+      </li>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
+       <li Class="CompProperties_Facility">
+        <statOffsets>
+          <BedRestEffectiveness>1000</BedRestEffectiveness>
+          <BedHungerRateFactor>-1000</BedHungerRateFactor>
+        </statOffsets>
+       </li>
     </comps>
     <inspectorTabs>
       <li>ITab_Art</li>
@@ -57,7 +81,10 @@
     <drawGUIOverlay>True</drawGUIOverlay>
     <defaultPlacingRot>South</defaultPlacingRot>
     <building>
+      <bed_caravansCanUse>true</bed_caravansCanUse>
+      <isSittable>true</isSittable>
       <bed_showSleeperBody>True</bed_showSleeperBody>
+      <bed_healPerDay>1000</bed_healPerDay>
       <canPlaceOverImpassablePlant>True</canPlaceOverImpassablePlant>
       <ai_chillDestination>False</ai_chillDestination>
       <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
